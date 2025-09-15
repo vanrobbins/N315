@@ -1,0 +1,18 @@
+// Central color variables used by nav and color partials
+// Base shades for the primary colors (used in nav gradients and color blocks)
+$red-500: #f44336;
+$red-400: #e57373;
+$red-600: #e53935;
+
+$blue-500: #1976d2;
+$blue-400: #64b5f6;
+$blue-600: #1565c0;
+
+$yellow-500: #fbc02d;
+$yellow-400: #fff176;
+$yellow-600: #f9a825;
+
+// Derived gradients for convenience
+$grad-red: linear-gradient(90deg, $red-400 0%, $red-500 100%);
+$grad-blue: linear-gradient(90deg, $blue-400 0%, $blue-500 100%);
+$grad-yellow: linear-gradient(90deg, $yellow-400 0%, $yellow-500 100%);

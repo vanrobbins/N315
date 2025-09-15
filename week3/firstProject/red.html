@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Red mixes</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<nav>
+			<a href="index.html"><i data-feather="home"></i></a>
+			<a class="color red" href="red.html"><i></i></a>
+			<a class="color blue" href="blue.html"><i></i></a>
+			<a class="color yellow" href="yellow.html"><i></i></a>
+		</nav>
+
+		<main class="combos">
+			<!-- Only red-based mixes -->
+			<!-- Red + Yellow = Orange -->
+			<div class="combo-row">
+				<div class="color-block red" aria-hidden="true"></div>
+				<div class="symbol">+</div>
+				<div class="color-block yellow" aria-hidden="true"></div>
+				<div class="symbol">=</div>
+				<div class="color-block orange" aria-hidden="true"></div>
+			</div>
+
+			<!-- Red + Blue = Purple -->
+			<div class="combo-row">
+				<div class="color-block red"></div>
+				<div class="symbol">+</div>
+				<div class="color-block blue"></div>
+				<div class="symbol">=</div>
+				<div class="color-block purple"></div>
+			</div>
+
+			<!-- Red + Blue + Yellow -->
+			<div class="combo-row">
+				<div class="color-block red"></div>
+				<div class="symbol">+</div>
+				<div class="color-block blue"></div>
+				<div class="symbol">+</div>
+				<div class="color-block yellow"></div>
+				<div class="symbol">=</div>
+				<div class="color-block brown"></div>
+			</div>
+		</main>
+
+		<footer class="home-footer">Primary Colors — simplified mixes</footer>
+
+		<script src="node_modules/feather-icons/dist/feather.min.js"></script>
+		<script>
+			feather.replace();
+		</script>
+	</body>
+</html>

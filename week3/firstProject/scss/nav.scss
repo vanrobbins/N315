@@ -1,0 +1,49 @@
+@use "colors";
+
+nav {
+	width: 80vw;
+	height: 10vh;
+	margin: auto;
+	background-color: #ddd;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	border-radius: 12px;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+	a {
+		border-radius: 12px;
+		text-decoration: none;
+		color: #222;
+		padding: 1.5vh 2vw 1.5vh 2vw;
+		display: flex;
+		align-items: center;
+		transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s, filter 0.2s;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+		&:hover,
+		&:focus {
+			filter: brightness(1.08);
+		}
+	}
+	a.color {
+		&.yellow {
+			background: colors.$grad-yellow;
+			color: #222;
+			transition: background 0.3s, color 0.2s;
+		}
+		&.red {
+			background: colors.$grad-red;
+			color: #fff;
+			transition: background 0.3s, color 0.2s;
+		}
+		&.blue {
+			background: colors.$grad-blue;
+			color: #fff;
+			transition: background 0.3s, color 0.2s;
+		}
+	}
+
+	i {
+		width: 24px;
+		height: 24px;
+	}
+}
