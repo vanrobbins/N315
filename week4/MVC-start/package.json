@@ -1,0 +1,17 @@
+{
+	"name": "mvc-start",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"directories": {
+		"lib": "lib"
+	},
+	"scripts": {
+		"compile:sass": "sass sccs/styles.scss css/styles.css -w --no-source-maps",
+		"serve": "live-server"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs"
+}

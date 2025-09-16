@@ -1,0 +1,33 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-bottom: 16px;
+}
+nav {
+	padding: 1.5rem 0 1.5rem 0;
+	display: flex;
+	background-color: #333;
+	color: #ddd;
+	justify-content: space-around;
+	align-content: center;
+}
+a {
+	text-decoration: none;
+	color: #ddd;
+}
+app {
+	padding-bottom: 20px;
+}
