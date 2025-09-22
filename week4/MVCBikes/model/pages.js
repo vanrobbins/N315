@@ -41,7 +41,7 @@ const aboutPage = `
 <section id="aboutMain" class="about-main">
 	<div class="about-container">
 		<div class="about-image">
-			<img src="../images/f0164550-800px-wm.jpg" alt="Bike mechanic at work" />
+			<img src="./images/f0164550-800px-wm.jpg" alt="Bike mechanic at work" />
 		</div>
 		<div class="about-text">
 			<h2>Our Story</h2>
