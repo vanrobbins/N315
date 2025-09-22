@@ -1,0 +1,21 @@
+{
+	"name": "mvcbikes",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"directories": {
+		"lib": "lib"
+	},
+	"scripts": {
+		"compile:sass": "sass scss/style.scss css/style.css -w --no-source-map",
+		"serve": "live-server"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"dependencies": {},
+	"devDependencies": {
+		"sass": "^1.93.0"
+	}
+}

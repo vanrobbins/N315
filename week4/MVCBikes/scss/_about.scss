@@ -1,0 +1,249 @@
+// About page hero section
+.about-hero {
+	background: #2a2a2a;
+	padding: 4rem 2rem;
+	text-align: center;
+	border-bottom: 5px solid #333;
+
+	.hero-content {
+		max-width: 800px;
+		margin: 0 auto;
+
+		h1 {
+			font-family: "DazedAndCondensed", "Arial Narrow", sans-serif;
+			font-size: 3.5rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #fff;
+			margin-bottom: 1rem;
+			letter-spacing: 1px;
+		}
+
+		.lead {
+			font-size: 1.3rem;
+			color: #ccc;
+			line-height: 1.6;
+			margin-bottom: 0;
+		}
+	}
+
+	@media (max-width: 768px) {
+		padding: 2.5rem 1rem;
+
+		.hero-content h1 {
+			font-size: 2.5rem;
+		}
+
+		.lead {
+			font-size: 1.1rem;
+		}
+	}
+}
+
+// Main about content with image and text side by side
+.about-main {
+	padding: 4rem 2rem;
+	background: #f8f8f8;
+
+	.about-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.about-image {
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+		}
+	}
+
+	.about-text {
+		h2 {
+			font-family: "DazedAndCondensed", "Arial Narrow", sans-serif;
+			font-size: 2.5rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #2a2a2a;
+			margin-bottom: 1.5rem;
+			letter-spacing: 0.5px;
+		}
+
+		h3 {
+			font-family: "DazedAndCondensed", "Arial Narrow", sans-serif;
+			font-size: 1.8rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #2a2a2a;
+			margin: 2rem 0 1rem 0;
+			letter-spacing: 0.5px;
+		}
+
+		p {
+			color: #555;
+			line-height: 1.7;
+			margin-bottom: 1.5rem;
+			font-size: 1rem;
+		}
+
+		.features-list {
+			margin: 1.5rem 0 2rem 0;
+
+			li {
+				color: #555;
+				margin-bottom: 0.8rem;
+				line-height: 1.6;
+
+				strong {
+					color: #2a2a2a;
+				}
+			}
+		}
+
+		.cta-section {
+			display: flex;
+			gap: 1rem;
+			margin-top: 2rem;
+
+			.cta-button {
+				display: inline-block;
+				background: #2a2a2a;
+				color: #fff;
+				padding: 0.8rem 1.5rem;
+				text-decoration: none;
+				border-radius: 4px;
+				font-weight: bold;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+				transition: all 0.2s ease;
+
+				&:hover {
+					background: #1a1a1a;
+					transform: translateY(-1px);
+				}
+
+				&.secondary {
+					background: transparent;
+					color: #2a2a2a;
+					border: 2px solid #2a2a2a;
+
+					&:hover {
+						background: #2a2a2a;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		padding: 2.5rem 1rem;
+
+		.about-container {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.about-text {
+			h2 {
+				font-size: 2rem;
+			}
+
+			h3 {
+				font-size: 1.5rem;
+			}
+
+			.cta-section {
+				flex-direction: column;
+
+				.cta-button {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+// Values section
+.about-values {
+	padding: 4rem 2rem;
+	background: #fff;
+
+	.values-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		text-align: center;
+
+		h2 {
+			font-family: "DazedAndCondensed", "Arial Narrow", sans-serif;
+			font-size: 2.5rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #2a2a2a;
+			margin-bottom: 3rem;
+			letter-spacing: 0.5px;
+		}
+	}
+
+	.values-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.value-card {
+		background: #f8f8f8;
+		padding: 2rem;
+		border-radius: 8px;
+		border: 1px solid #ddd;
+		transition: all 0.3s ease;
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+			border-color: #999;
+		}
+
+		h3 {
+			font-family: "DazedAndCondensed", "Arial Narrow", sans-serif;
+			font-size: 1.5rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #2a2a2a;
+			margin-bottom: 1rem;
+			letter-spacing: 0.5px;
+		}
+
+		p {
+			color: #666;
+			line-height: 1.6;
+		}
+	}
+
+	@media (max-width: 768px) {
+		padding: 2.5rem 1rem;
+
+		.values-container h2 {
+			font-size: 2rem;
+		}
+
+		.values-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.value-card {
+			padding: 1.5rem;
+
+			h3 {
+				font-size: 1.3rem;
+			}
+		}
+	}
+}

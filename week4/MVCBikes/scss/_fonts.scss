@@ -1,0 +1,9 @@
+@font-face {
+	font-family: "DazedAndCondensed"; /* Define a name for your font */
+	src: local("DazedandCondensed"),
+		/* Optional: Check for local installation first */ url("../fonts/DazedandCondensed-Bold.woff2") format("woff2"),
+		url("../fonts/DazedandCondensed-Bold.woff") format("woff"); /* Fallback for older browsers */
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap; /* Recommended for better performance */
+}
