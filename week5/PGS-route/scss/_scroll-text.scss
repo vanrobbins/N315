@@ -1,0 +1,27 @@
+.scrolling-text-container {
+	overflow: hidden; /* Hides the overflowing content */
+	white-space: nowrap; /* Prevents text from wrapping */
+	box-sizing: border-box;
+}
+.scrolling-text-content {
+	display: inline-block; /* Allows content to be on one line */
+	animation: scrollText 40s linear infinite; /* Apply the animation */
+	span {
+		display: inline-block; /* Ensures spans are treated as blocks for layout */
+		font-size: 96px;
+		font-weight: 500;
+		display: inline-block;
+		transform: skewX(-10deg);
+		text-transform: uppercase;
+		padding-right: 50px;
+		letter-spacing: -1px;
+	}
+}
+@keyframes scrollText {
+	0% {
+		transform: translateX(0%); /* Start at original position */
+	}
+	100% {
+		transform: translateX(-50%); /* Move half the content width to the left */
+	}
+}

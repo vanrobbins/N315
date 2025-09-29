@@ -1,0 +1,50 @@
+.landing-overlay {
+	visibility: hidden;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+	cursor: pointer;
+
+	// Fade-out animation when .show class is removed
+	transition: opacity 2s linear, visibility 2s linear;
+
+	&.show {
+		visibility: visible;
+		opacity: 1;
+		// No transition on show - immediate appearance
+		transition: none;
+	}
+
+	.landing-img {
+		height: 450px;
+		width: 450px;
+		max-width: 90vw;
+		max-height: 90vh;
+		object-fit: contain;
+		transition: transform 0.3s ease;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+}
+
+// Keep original landing class for other uses
+.landing {
+	display: flex;
+	background-color: #fff;
+	align-items: center;
+	justify-content: center;
+	.landing-img {
+		height: 450px;
+		width: 450px;
+	}
+}

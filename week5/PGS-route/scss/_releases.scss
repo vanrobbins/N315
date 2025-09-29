@@ -1,0 +1,122 @@
+// Releases page styles - matching site design patterns
+.releases-hero {
+	height: 200px;
+	background: linear-gradient(135deg, #000 0%, #333 100%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.releases-content {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 2rem;
+	padding: 3rem 2rem;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.release-card {
+	background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+	border-radius: 12px;
+	padding: 2rem;
+	cursor: pointer;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+	border: 1px solid #dee2e6;
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 4px;
+		background: linear-gradient(90deg, #000 0%, #333 100%);
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+		background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+
+		&::before {
+			transform: scaleX(1);
+		}
+
+		.release-info h3 {
+			color: #000;
+		}
+
+		.artist-name {
+			color: #333;
+		}
+	}
+}
+
+.release-info {
+	h3 {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.4rem;
+		font-weight: 700;
+		color: #212529;
+		line-height: 1.3;
+		transition: color 0.3s ease;
+	}
+
+	.artist-name {
+		margin: 0;
+		font-size: 1rem;
+		color: #6c757d;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		transition: color 0.3s ease;
+	}
+}
+
+// Responsive design
+@media (max-width: 768px) {
+	.releases-content {
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 1.5rem;
+		padding: 2rem 1rem;
+	}
+
+	.releases-hero {
+		height: 150px;
+	}
+
+	.release-card {
+		padding: 1.5rem;
+	}
+
+	.release-info h3 {
+		font-size: 1.2rem;
+	}
+
+	.release-info .artist-name {
+		font-size: 0.9rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.releases-content {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		padding: 1.5rem 0.5rem;
+	}
+
+	.release-card {
+		padding: 1.25rem;
+	}
+
+	.release-info h3 {
+		font-size: 1.1rem;
+	}
+}

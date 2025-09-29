@@ -1,0 +1,20 @@
+{
+	"name": "pgs-route",
+	"version": "0.1.0",
+	"description": "Portage Garage Sounds Website",
+	"license": "ISC",
+	"author": "Van",
+	"type": "commonjs",
+	"main": "index.js",
+	"directories": {
+		"lib": "lib"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"serve": "live-server",
+		"compile:sass": "sass ./scss/style.scss ./css/style.css -w --no-source-map"
+	},
+	"devDependencies": {
+		"sass": "^1.93.2"
+	}
+}
