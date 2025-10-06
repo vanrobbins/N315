@@ -1,0 +1,74 @@
+.toast {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translate(-50%, 150%);
+	opacity: 0;
+	padding: 16px;
+	background-color: #ddd;
+	border-radius: 4px;
+	z-index: 1000;
+	transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	will-change: transform, opacity;
+}
+.toast.show {
+	transform: translate(-50%, 0);
+	opacity: 1;
+}
+.toast.hide {
+	transform: translate(-50%, 150%);
+	opacity: 0;
+}
+.alert-holder {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 1000;
+	background-color: #00000033;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.alert-holder .alert-callout {
+	position: relative;
+	background-color: #ddd;
+	min-width: 300px;
+	padding: 20px;
+	border-radius: 15px;
+	max-width: 30vw;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.alert-callout .x-close-alert {
+	font-family: Arial, Helvetica, sans-serif;
+	position: absolute;
+	padding: 10px;
+	color: red;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+.alert-callout .button-bar {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+}
+.alert-callout .btn {
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.alert-callout .btn.confirm {
+	background-color: green;
+	color: #ddd;
+}
+.alert-callout .btn.cancel {
+	background-color: red;
+	color: #ddd;
+}

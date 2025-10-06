@@ -1,0 +1,44 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-bottom: 16px;
+}
+
+.simple-nav {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 10vh;
+}
+.simple-nav a {
+	text-decoration: none;
+	font-size: 20px;
+	color: #050505;
+}
+#app {
+	padding: 20px;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	margin: auto 50px;
+}
+form input,
+form button,
+form textarea {
+	margin-bottom: 16px;
+	padding: 8px;
+}
