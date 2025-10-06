@@ -1,0 +1,81 @@
+<main id="login" class="auth-page">
+	<div class="auth-container">
+		<div class="auth-card">
+			<!-- Header -->
+			<div class="auth-header">
+				<div class="auth-logo">
+					<div class="logo-icon">💰</div>
+					<h1>SecureBank</h1>
+				</div>
+				<h2>Welcome Back</h2>
+				<p class="auth-subtitle">Sign in to access your account</p>
+			</div>
+
+			<!-- Login Form -->
+			<form id="loginForm" class="auth-form">
+				<!-- Username Field -->
+				<div class="form-group">
+					<label for="loginUsername" class="form-label">Username</label>
+					<input
+						type="text"
+						id="loginUsername"
+						name="username"
+						class="form-input"
+						placeholder="Enter your username"
+						required
+						autocomplete="username"
+						maxlength="16"
+					/>
+				</div>
+				<!-- Password Field -->
+				<div class="form-group">
+					<label for="loginPassword" class="form-label">Password</label>
+					<div class="form-input-wrapper">
+						<input
+							type="password"
+							id="loginPassword"
+							name="password"
+							class="form-input"
+							placeholder="Enter your password"
+							required
+							autocomplete="current-password"
+							minlength="8"
+						/>
+					</div>
+				</div>
+				<!-- Remember Me & Forgot Password -->
+				<div class="form-options">
+					<label class="checkbox-label">
+						<input type="checkbox" id="rememberMe" name="rememberMe" />
+						<span>Remember me</span>
+					</label>
+					<a href="#forgot-password" class="link-primary">Forgot password?</a>
+				</div>
+
+				<!-- Submit Button -->
+				<button type="submit" class="btn btn-primary btn-block">Sign In</button>
+			</form>
+
+			<!-- Divider -->
+			<div class="auth-divider">
+				<span>or</span>
+			</div>
+
+			<!-- Sign Up Link -->
+			<div class="auth-footer">
+				<p>Don't have an account? <a href="#signup" class="link-primary link-bold">Open Account</a></p>
+			</div>
+
+			<!-- Additional Links -->
+			<div class="auth-links">
+				<a href="#support" class="link-secondary">Need help?</a>
+				<a href="#home" class="link-secondary">Back to Home</a>
+			</div>
+		</div>
+
+		<!-- Security Notice -->
+		<div class="security-notice">
+			<p>🔒 Your information is secure and encrypted</p>
+		</div>
+	</div>
+</main>
