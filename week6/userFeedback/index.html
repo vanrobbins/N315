@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>User | Feedback</title>
+		<link rel="stylesheet" href="/css/util.css" />
+		<link rel="stylesheet" href="/css/style.css" />
+	</head>
+	<body>
+		<nav class="simple-nav">
+			<a href="">Home</a>
+			<a href="">About</a>
+			<a href="">Contact</a>
+			<a href="">Store</a>
+		</nav>
+		<div id="app">
+			<h1>User Feedback</h1>
+			<form id="feedbackForm">
+				<label for="username">Name:</label>
+				<input type="username" id="username" name="username" maxlength="16" placeholder="enter username" required />
+				<label for="comments">Comments:</label>
+				<textarea id="comments" name="comments" placeholder="enter comments" required></textarea>
+				<button type="submit">Submit Feedback</button>
+			</form>
+			<div>
+				<h3>Feedback Recieved</h3>
+			</div>
+		</div>
+		<!-- <div id="alert-holder">
+			<div class="alert-callout">
+				<h1 class="alert-title">alert title</h1
+				><p
+					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt odio asperiores, excepturi dolores
+					exercitationem nostrum itaque, doloribus, sed consequuntur provident dolorum cupiditate facilis at! Similique
+					quibusdam excepturi deleniti unde perspiciatis.</p
+				><span class="x-close-alert">X</span>
+				<div class="button-bar"> <div class="btn confirm">Confirm</div> <div class="btn cancel">Cancel</div></div>
+			</div>
+		</div> -->
+		<script src="/lib/jquery-3.7.1.min.js"></script>
+		<script type="module" src="/lib/util.js"></script>
+		<script type="module" src="/app/app.js"></script>
+	</body>
+</html>
