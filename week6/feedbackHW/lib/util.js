@@ -66,7 +66,15 @@ export function createAlert(alertObj) {
 	alertDiv.addEventListener("click", (e) => {
 		// Only close if clicked element is the backdrop itself, not a child
 		if (e.target === alertDiv) {
-			removeAlert();
+			if (alertObj.onCancel) {
+				alertObj.onCancel();
+				removeAlert();
+			} else if (alertObj.onConfirm) {
+				alertObj.onConfirm();
+				removeAlert();
+			} else {
+				removeAlert();
+			}
 		}
 	});
 
