@@ -1,5 +1,5 @@
 // CONTROLLER: Manages user interactions and application flow
-import { pageModel, loginModel, signupModel, createAlert, createToast } from "../model/model.js";
+import { pageModel, booksModel, loginModel, signupModel, createAlert, createToast } from "../model/model.js";
 
 // Main App Controller
 class AppController {
@@ -8,24 +8,28 @@ class AppController {
 	init() {
 		this.initRouting();
 		this.initNavigation();
+		this.initTheme();
+		this.initMobileNav();
 	}
 
 	// Initialize navigation interactions
 	initNavigation() {
 		// Update active nav link based on current hash
-		$(window).on("hashchange", () => {
+		$(window).on("hashchange", (e) => {
 			const hash = window.location.hash || "#home";
-			$(".nav-links a").removeClass("active");
-			$(".nav-actions a").removeClass("active");
-			$(`.nav-links a[href="${hash}"]`).addClass("active");
-			$(`.nav-actions a[href="${hash}"]`).addClass("active");
+			this.setActive(hash);
 		});
-
 		// Set initial active link
 		const initialHash = window.location.hash || "#home";
-		$(`.nav-links a[href="${initialHash}"]`).addClass("active");
+		$(`#nav-links a[href="${initialHash}"]`).addClass("active");
+		$(`.mobile-nav-content a[href="${initialHash}"]`).addClass("active");
 	}
-
+	setActive(pageID) {
+		$(`#nav-links a`).removeClass("active");
+		$(`#nav-links a[href="${pageID}"]`).addClass("active");
+		$(`.mobile-nav-content a`).removeClass("active");
+		$(`.mobile-nav-content a[href="${pageID}"]`).addClass("active");
+	}
 	initRouting() {
 		$(window).on("hashchange", () => this.route());
 		this.route();
@@ -73,6 +77,10 @@ class AppController {
 	// Initialize listeners based on the current page
 	initPageListeners(pageName) {
 		switch (pageName) {
+			case "home":
+			case "":
+				this.loadFeaturedBooks();
+				break;
 			case "login":
 				this.initLoginListeners();
 				break;
@@ -84,6 +92,81 @@ class AppController {
 		}
 	}
 
+	// Load and display featured books
+	async loadFeaturedBooks() {
+		try {
+			const featuredBooks = await booksModel.getFeaturedBooks();
+			const container = $("#featured-books-container");
+
+			if (!container.length) return;
+
+			container.empty();
+
+			featuredBooks.forEach((book) => {
+				const bookCard = `
+					<div class="book-card" data-book-id="${book.id}">
+						<div class="book-cover">
+							<img src="${book.cover}" alt="${book.title}
+						</div>
+						<div class="book-info">
+							<h3 class="book-title">${book.title}</h3>
+							<p class="book-author">${book.author}</p>
+							<div class="book-description">
+								<p class="book-description">${book.description}</p>
+							</div>
+							<p class="book-price">$${book.price.toFixed(2)}</p>
+							<button class="btn-add-cart" ${!book.inStock ? "disabled" : ""}>
+								${book.inStock ? "Add to Cart" : "Out of Stock"}
+							</button>
+						</div>
+					</div>
+				`;
+				container.append(bookCard);
+			});
+		} catch (error) {
+			console.error("Error loading featured books:", error);
+		}
+	}
+	initMobileNav() {
+		const $mOverlay = $("#mobile-nav-overlay");
+		const $mNav = $("#mobile-nav");
+		const $hamburger = $("#nav-hamburger");
+		const $close = $("#mobile-nav-close");
+		$("#mobile-nav").removeClass("no-animate");
+		const open = () => {
+			$mNav.removeClass("hidden").addClass("visible");
+			$mOverlay.removeClass("hidden");
+		};
+
+		const close = () => {
+			$mNav.removeClass("visible").addClass("hidden");
+			$mOverlay.addClass("hidden");
+		};
+
+		// Open on hamburger click
+		$(document).on("click", "#nav-hamburger", (e) => {
+			e.preventDefault();
+			open();
+		});
+
+		// Close on close button
+		$(document).on("click", "#mobile-nav-close", (e) => {
+			e.preventDefault();
+			close();
+		});
+
+		// Close when clicking overlay background
+		$(document).on("click", "#mobile-nav-overlay", function (e) {
+			if (e.target === this) {
+				close();
+			}
+		});
+
+		// Close when clicking any mobile nav link
+		$(document).on("click", "#mobile-nav .mobile-nav-link", () => {
+			close();
+		});
+	}
 	// Login page listeners
 	initLoginListeners() {
 		const $form = $("#loginForm");
@@ -205,6 +288,22 @@ class AppController {
 			$(this).removeClass("error");
 			const errorId = $(this).attr("id") + "Error";
 			$(`#${errorId}`).text("");
+		});
+	}
+	initTheme() {
+		let theme = pageModel.getTheme();
+		$(":root").addClass(theme + "-mode");
+		$("#theme-changer").text((theme === "dark" ? "Light" : "Dark") + " Mode");
+		$("#theme-changer").on("click", function () {
+			let newTheme = theme === "dark" ? "light" : "dark";
+			$(":root")
+				.removeClass(theme + "-mode")
+				.addClass(newTheme + "-mode");
+
+			$("#theme-changer").text(theme.charAt(0).toUpperCase() + theme.slice(1) + " Mode");
+			theme = newTheme;
+
+			pageModel.setTheme(theme);
 		});
 	}
 }

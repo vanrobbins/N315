@@ -1,0 +1,38 @@
+{
+	"Books": [
+		{
+			"id": 0,
+			"title": "The Last Lecture",
+			"author": "Randy Pausch",
+			"year": 2008,
+			"price": 9.99,
+			"image": "https://picsum.photos/205/311",
+			"genre": "Memoir",
+			"description": "Lessons on living and achieving your childhood dreams, told with warmth and humor.",
+			"featured": false
+		},
+		{
+			"id": 1,
+			"title": "To Kill a Mockingbird",
+			"author": "Harper Lee",
+			"year": 1960,
+			"price": 7.5,
+			"image": "https://picsum.photos/205/311",
+			"genre": "Fiction",
+			"description": "A classic novel of racial injustice and childhood in the American South.",
+			"featured": true
+		},
+		{
+			"id": 2,
+			"title": "Clean Code",
+			"author": "Robert C. Martin",
+			"year": 2008,
+			"price": 32.0,
+			"image": "https://picsum.photos/205/311",
+			"genre": "Programming",
+			"description": "A handbook of agile software craftsmanship focusing on writing readable, maintainable code.",
+			"featured": false
+		}
+	],
+	"Genres": ["Ficton", "Programming", "Memoir"]
+}

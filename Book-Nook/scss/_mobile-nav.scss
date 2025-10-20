@@ -1,0 +1,141 @@
+@use "colors" as *;
+@use "shadows" as *;
+
+// Mobile nav overlay (darkens background)
+#mobile-nav-overlay {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 998;
+	opacity: 1;
+	transition: opacity 300ms ease-in-out;
+
+	&.hidden {
+		display: none;
+		opacity: 0;
+		pointer-events: none;
+	}
+}
+
+// Mobile nav panel (slides from right)
+#mobile-nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: min(80vw, 20rem);
+	height: 100vh;
+	background-color: $color-bg;
+	box-shadow: $shadow-combined;
+	z-index: 999;
+	transform: translateX(100%);
+	transition: transform 300ms ease-in-out;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	&.no-animate {
+		transition: none !important;
+	}
+	&.hidden {
+		transform: translateX(100%);
+	}
+
+	&.visible {
+		transform: translateX(0);
+	}
+}
+
+// Mobile nav header (user actions + close button)
+.mobile-nav-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem 1.25rem;
+	border-bottom: 1px solid $color-border;
+
+	#mobile-nav-user {
+		display: flex;
+		gap: clamp(0rem, 2rem - 2vw, 2rem);
+		.mobile-nav-useritem {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 4px;
+			transition: background-color 200ms;
+			padding: 0.1rem;
+			padding-left: 0.3rem;
+			text-decoration: none;
+			color: $color-fg;
+			&:hover,
+			&:focus-visible {
+				fill: $color-focus;
+				background-color: $color-accent-muted;
+				outline: none;
+			}
+		}
+	}
+	.mobile-nav-icon {
+		padding: 0.1rem;
+		width: 2rem;
+		height: 2rem;
+		fill: $color-fg;
+		border-radius: 4px;
+		background: none;
+		border: none;
+		cursor: pointer;
+		transition: background-color 200ms;
+	}
+	#mobile-nav-close {
+		#close-icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&:hover,
+			&:focus-visible {
+				fill: $color-focus;
+				background-color: $color-accent-muted;
+				outline: none;
+			}
+		}
+	}
+}
+
+// Mobile nav content (links)
+.mobile-nav-content {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	padding: 1rem 0;
+	gap: 0.25rem;
+
+	.mobile-nav-link {
+		padding: 2.25rem 1.5rem;
+		color: $color-fg;
+		text-decoration: none;
+		font-size: 1.125rem;
+		transition: background-color 200ms, color 200ms;
+		border-left: 3px solid transparent;
+
+		&:hover,
+		&:focus-visible {
+			background-color: $color-accent-muted;
+			border-left-color: $color-focus;
+			outline: none;
+		}
+
+		&.active {
+			background-color: $color-accent-muted;
+			border-left-color: $color-accent;
+			font-weight: 600;
+		}
+	}
+
+	.mobile-nav-divider {
+		height: 1px;
+		background-color: $color-border;
+		margin: auto 1.5rem 0.75rem 1.5rem;
+	}
+}
