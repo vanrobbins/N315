@@ -1,5 +1,5 @@
 // CONTROLLER: Manages user interactions and application flow
-import { pageModel, booksModel, loginModel, signupModel, createAlert, createToast } from "../model/model.js";
+import { pageModel, booksModel, loginModel, signupModel, blogModel, createAlert, createToast } from "../model/model.js";
 
 // Main App Controller
 class AppController {
@@ -34,12 +34,60 @@ class AppController {
 		$(window).on("hashchange", () => this.route());
 		this.route();
 	}
+	initMobileNav() {
+		const $mOverlay = $("#mobile-nav-overlay");
+		const $mNav = $("#mobile-nav");
+		const $hamburger = $("#nav-hamburger");
+		const $close = $("#mobile-nav-close");
+		$("#mobile-nav").removeClass("no-animate");
+		const open = () => {
+			$mNav.css("display", "flex");
+			$mNav.removeClass("hidden").addClass("visible");
+			$mOverlay.removeClass("hidden");
+		};
+		const close = () => {
+			$mNav.removeClass("visible").addClass("hidden");
+			$mOverlay.addClass("hidden");
+			$mNav.css("display", "none");
+		};
+		// Open on hamburger click
+		$(document).on("click", "#nav-hamburger", (e) => {
+			e.preventDefault();
+			open();
+		});
+		// Close on close button
+		$(document).on("click", "#mobile-nav-close", (e) => {
+			e.preventDefault();
+			close();
+		});
+		// Close when clicking overlay background
+		$(document).on("click", "#mobile-nav-overlay", function (e) {
+			if (e.target === this) {
+				close();
+			}
+		});
 
+		// Close when clicking any mobile nav link
+		$(document).on("click", "#mobile-nav .mobile-nav-link", () => {
+			close();
+		});
+	}
+	//Routing to get page
 	async route() {
 		const hashTag = window.location.hash;
-		const pageName = hashTag.replace("#", "");
+		// Parse hash and query parameters
+		const [pageHash, queryString] = hashTag.replace("#", "").split("?");
+		const pageName = pageHash || "home";
+
 		try {
-			const result = await pageModel.changePage(pageName);
+			let result;
+			// If blog page with post ID parameter
+			if (pageName === "blog" && queryString) {
+				result = await this.loadBlogDetailPage(queryString);
+			} else {
+				result = await pageModel.changePage(pageName);
+			}
+
 			// Controller updates the view based on Model data
 			if (result.success) {
 				$("#app").html(result.content);
@@ -74,50 +122,26 @@ class AppController {
 		}
 	}
 
-	// Initialize listeners based on the current page
-	initPageListeners(pageName) {
-		switch (pageName) {
-			case "home":
-			case "":
-				this.loadFeaturedBooks();
-				break;
-			case "login":
-				this.initLoginListeners();
-				break;
-			case "signup":
-				this.initSignupListeners();
-				break;
-			default:
-				break;
-		}
-	}
-
-	// Load and display featured books
-	async loadFeaturedBooks() {
+	// Load and display featured books on Home
+	async initFeaturedHomeBooks() {
 		try {
-			const featuredBooks = await booksModel.getFeaturedBooks();
+			const featuredBooks = await booksModel.getFeaturedHomeBooks();
 			const container = $("#featured-books-container");
 
 			if (!container.length) return;
-
 			container.empty();
-
 			featuredBooks.forEach((book) => {
 				const bookCard = `
 					<div class="book-card" data-book-id="${book.id}">
 						<div class="book-cover">
-							<img src="${book.cover}" alt="${book.title}
+						<img class="cover-img" src='${book.cover}'/>
 						</div>
-						<div class="book-info">
-							<h3 class="book-title">${book.title}</h3>
-							<p class="book-author">${book.author}</p>
-							<div class="book-description">
-								<p class="book-description">${book.description}</p>
-							</div>
+						<div class="book-description">
+								<p>${book.description}</p>
+						</div>
 							<p class="book-price">$${book.price.toFixed(2)}</p>
-							<button class="btn-add-cart" ${!book.inStock ? "disabled" : ""}>
-								${book.inStock ? "Add to Cart" : "Out of Stock"}
-							</button>
+						<button class="btn-add-cart">
+								Add to Cart</button>
 						</div>
 					</div>
 				`;
@@ -127,44 +151,151 @@ class AppController {
 			console.error("Error loading featured books:", error);
 		}
 	}
-	initMobileNav() {
-		const $mOverlay = $("#mobile-nav-overlay");
-		const $mNav = $("#mobile-nav");
-		const $hamburger = $("#nav-hamburger");
-		const $close = $("#mobile-nav-close");
-		$("#mobile-nav").removeClass("no-animate");
-		const open = () => {
-			$mNav.removeClass("hidden").addClass("visible");
-			$mOverlay.removeClass("hidden");
-		};
-
-		const close = () => {
-			$mNav.removeClass("visible").addClass("hidden");
-			$mOverlay.addClass("hidden");
-		};
-
-		// Open on hamburger click
-		$(document).on("click", "#nav-hamburger", (e) => {
-			e.preventDefault();
-			open();
-		});
-
-		// Close on close button
-		$(document).on("click", "#mobile-nav-close", (e) => {
-			e.preventDefault();
-			close();
-		});
-
-		// Close when clicking overlay background
-		$(document).on("click", "#mobile-nav-overlay", function (e) {
-			if (e.target === this) {
-				close();
+	// Load books for books page by category
+	async initBooksCategory() {
+		const books = await booksModel.getBooksByCategory();
+		const categories = Object.keys(books);
+		const container = $("#books-container");
+		// Render categories
+		for (const key of categories) {
+			// Sanitize genre name for use in HTML IDs (replace spaces with hyphens)
+			const sanitizedKey = key.replace(/\s+/g, "-").toLowerCase();
+			const categoryDiv = $(`<div class='category' id='${sanitizedKey}-container'>
+				<h1>${key.charAt(0).toUpperCase() + key.slice(1)} Books</h1>
+				<div class=book-grid id='${sanitizedKey}-books'></div>
+			</div>`);
+			for (const book of books[key]) {
+				const bookCard = `<div class="cat-book-card" data-book-id="${book.id}">
+						<div class="book-cover">
+							<img src='${book.cover}' alt='invalid img'/>
+						</div>
+						<div class="book-info">
+							<div class="book-description">
+								<p>${book.description}</p>
+							</div>
+							<p class="book-price">$${book.price.toFixed(2)}</p>
+							<button class="btn-add-cart">Add to Cart</button>
+						</div>
+					</div>`;
+				categoryDiv.find(`#${sanitizedKey}-books`).append(bookCard);
 			}
-		});
 
-		// Close when clicking any mobile nav link
-		$(document).on("click", "#mobile-nav .mobile-nav-link", () => {
-			close();
+			container.append(categoryDiv);
+		}
+	}
+	// Load blog detail page with post content
+	async loadBlogDetailPage(postId) {
+		try {
+			// First load the detail page template
+			let templateContent = await $.get("./pages/blog-detail.html");
+
+			// Get the post data
+			const post = await blogModel.getPostById(parseInt(postId));
+			if (!post) {
+				return {
+					success: false,
+					error: "Post not found",
+					pageID: "blog",
+				};
+			}
+
+			// Generate the post content based on type
+			let postContent;
+			switch (post.type) {
+				case "normal":
+					postContent = `
+						<img class="blog-detail-img" src="../../${post.previewImg}" alt="${post.title}"/>
+						<h1>${post.title.toUpperCase()}</h1>
+						<p class="blog-content">${post.content}</p>
+					`;
+					break;
+				case "book-highlight":
+					const highlightBooks = await booksModel.getBooksByIdArray(post.books);
+					const bookImages = highlightBooks
+						.map(
+							(book) => `
+							<div class="highlight-book">
+								<img src="${book.cover}" alt="${book.title}"/>
+							</div>
+						`
+						)
+						.join("");
+					postContent = `
+						<div class="blog-p-books">
+							${bookImages}
+						</div>
+						<h1>${post.title.toUpperCase()}</h1>
+						<p class="blog-content">${post.description}</p>
+						<p class="blog-content">${post.content || ""}</p>
+					`;
+					break;
+				default:
+					postContent = `<p>Unknown post type</p>`;
+			}
+
+			// Inject the post content into the template
+			const $template = $(templateContent);
+			$template.find(".blog-post-detail").html(postContent);
+			pageModel.setCurrentPage("blog");
+			pageModel.setLastLoadedPage("blog");
+
+			return {
+				success: true,
+				content: $template.html(),
+				pageID: "blog",
+			};
+		} catch (error) {
+			console.error("Error loading blog detail page:", error);
+			return {
+				success: false,
+				error: error.message,
+				pageID: "blog",
+			};
+		}
+	}
+	//Load Blog posts for blog page
+	async initBlog() {
+		const posts = await blogModel.getAllPosts();
+		console.log(posts);
+		const $blog = $("#blog");
+		let blogPost;
+		for (const post of posts) {
+			switch (post.type) {
+				case "normal":
+					blogPost = `
+					<div class=blog-post data-post-id="${post.id}">
+						<div class="blog-p-img" style="background-image:url(../../${post.previewImg})"></div>
+						<div class="blog-preview">
+							<h1>${post.title.toUpperCase()}</h1>
+							<p>${post.description}</p>
+							<button class="btn-read-more">Read More</button>
+						</div>
+					</div>`;
+
+					break;
+				case "book-highlight":
+					const highlightBooks = await booksModel.getBooksByIdArray(post.books);
+					blogPost = `
+					
+					<div class=blog-post data-post-id="${post.id}">
+						<div class="blog-p-books">
+							${highlightBooks
+								.map((book) => `<div class="highlight-book"><img src="${book.cover}" alt="${book.title}"/></div>`)
+								.join("")}
+						</div>
+						<div class="blog-preview">
+							<h1>${post.title.toUpperCase()}</h1>
+							<p>${post.description}</p>
+							<button class="btn-read-more">Read More</button>
+						</div>
+					</div>`;
+					break;
+			}
+			$blog.append(blogPost);
+		}
+		$(".btn-read-more").on("click", (e) => {
+			const postId = $(e.target).closest(".blog-post").attr("data-post-id");
+			window.location.hash = `#blog?${postId}`;
 		});
 	}
 	// Login page listeners
@@ -288,6 +419,43 @@ class AppController {
 			$(this).removeClass("error");
 			const errorId = $(this).attr("id") + "Error";
 			$(`#${errorId}`).text("");
+		});
+	}
+	// Initialize listeners based on the current page
+	initPageListeners(pageName) {
+		switch (pageName) {
+			case "home":
+			case "":
+				this.initFeaturedHomeBooks();
+				break;
+			case "books":
+				this.initBooksCategory();
+				break;
+			case "blog":
+				this.initBlog();
+				break;
+			case "login":
+				this.initLoginListeners();
+				break;
+			case "signup":
+				this.initSignupListeners();
+				break;
+			default:
+				break;
+		}
+	}
+	// Blog page listeners
+	initBlogListeners() {
+		// Back to blog button
+		$(document).on("click", ".btn-back-blog", () => {
+			window.location.hash = "#blog";
+		});
+		// Click blog post cards to open detail
+		$(document).on("click", ".blog-post", (e) => {
+			const postId = $(e.currentTarget).data("post-id");
+			if (postId) {
+				window.location.hash = `#blog?${postId}`;
+			}
 		});
 	}
 	initTheme() {

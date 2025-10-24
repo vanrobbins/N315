@@ -1,12 +1,12 @@
 @use "colors" as *;
 @use "shadows" as *;
 nav {
-	width: 100vw;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	flex: 0 0 auto;
 	border-bottom: 2px solid $color-border;
-	padding: 1.375rem 4.1666vw 0.8125rem 1.6666vw !important;
+	padding: 1.375rem 4.1666% 0.8125rem 1.6666% !important;
 
 	#nav-left a {
 		display: flex;

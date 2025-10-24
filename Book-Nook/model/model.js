@@ -1,7 +1,8 @@
 // MODEL: Manages application state and data
 
 import { createAlert, createToast } from "../lib/util.js";
-
+// Re-export helpers from lib so other modules can import them via model
+export { createAlert, createToast };
 class PageModel {
 	constructor() {
 		this.currentPage = "";
@@ -97,8 +98,8 @@ class BooksModel {
 			return this.books;
 		}
 		try {
-			const data = await $.getJSON("./model/data/data.json");
-			this.books = data;
+			const data = await $.getJSON("../data/data.json");
+			this.books = data.books;
 			this.loaded = true;
 			return this.books;
 		} catch (error) {
@@ -106,31 +107,89 @@ class BooksModel {
 			throw error;
 		}
 	}
-
 	async getFeaturedBooks() {
 		await this.loadBooks();
 		return this.books.filter((book) => book.featured === true);
 	}
-
+	async getFeaturedHomeBooks() {
+		const featuredBooks = await this.getFeaturedBooks();
+		while (featuredBooks.length > 3) {
+			featuredBooks.splice(Math.floor(Math.random() * featuredBooks.length - 1), 1);
+		}
+		return featuredBooks;
+	}
 	async getBookById(id) {
 		await this.loadBooks();
 		return this.books.find((book) => book.id === parseInt(id));
+	}
+	async getBooksByIdArray(idArray) {
+		await this.loadBooks();
+		const foundBooks = [];
+		idArray.forEach((id) => {
+			foundBooks.push(this.books.find((book) => book.id === parseInt(id)));
+		});
+		return foundBooks;
 	}
 
 	async getAllBooks() {
 		await this.loadBooks();
 		return this.books;
 	}
-}
 
-// Export model instances
+	async getBooksByCategory() {
+		await this.loadBooks();
+		const categorized = {};
+
+		// Add featured category
+		categorized.featured = this.books.filter((book) => book.featured === true);
+
+		// Group books by category
+		this.books.forEach((book) => {
+			if (book.genre) {
+				if (!categorized[book.genre]) {
+					categorized[book.genre] = [];
+				}
+				categorized[book.genre].push(book);
+				console.log(categorized);
+			}
+		});
+
+		return categorized;
+	}
+}
+class BlogModel {
+	constructor() {
+		this.blogPosts = [];
+		this.loaded = false;
+	}
+	async loadBlog() {
+		if (this.loaded) {
+			return this.blogPosts;
+		}
+		try {
+			const data = await $.getJSON("../data/data.json");
+			this.blogPosts = data.blogPosts;
+			this.loaded = true;
+			return this.blogPosts;
+		} catch (error) {
+			console.error("Error loading blog Posts:", error);
+			throw error;
+		}
+	}
+	async getPostById(id) {
+		await this.loadBlog();
+		return this.blogPosts.find((post) => post.id === parseInt(id));
+	}
+	async getAllPosts() {
+		await this.loadBlog();
+		return this.blogPosts;
+	}
+}
+// Export page model instances
 const pageModel = new PageModel();
 const booksModel = new BooksModel();
-
-export { pageModel, booksModel };
-
-// Re-export helpers from lib so other modules can import them via model
-export { createAlert, createToast };
+const blogModel = new BlogModel();
+export { pageModel, booksModel, blogModel };
 
 // Authentication Models
 export class LoginModel {

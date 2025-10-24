@@ -1,0 +1,448 @@
+{
+	"books": [
+		{
+			"id": 1,
+			"title": "The Midnight Library",
+			"author": "Matt Haig",
+			"price": 16.99,
+			"genre": "Fiction",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780525559474-L.jpg",
+			"featured": false,
+			"description": "Nora discovers a library that exists between life and death where each book allows her to explore alternate versions of her life. Through parallel worlds filled with possibility and consequence, she learns profound truths about regret and meaning. This enchanting journey reveals how every choice, no matter how small, shapes the life we live."
+		},
+		{
+			"id": 2,
+			"title": "Atomic Habits",
+			"author": "James Clear",
+			"price": 14.99,
+			"genre": "Self-Help",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg",
+			"featured": false,
+			"description": "James Clear reveals how tiny habits can lead to remarkable results through compound effect and systematic improvement. With practical strategies and compelling research, he transforms how we understand habit formation and behavioral change. Discover how small incremental improvements create extraordinary personal and professional transformation over time."
+		},
+		{
+			"id": 3,
+			"title": "Project Hail Mary",
+			"author": "Andy Weir",
+			"price": 18.99,
+			"genre": "Science Fiction",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg",
+			"featured": false,
+			"description": "Ryland Grace wakes alone on a spacecraft with no memory of how he got there, but with a critical mission to save Earth from extinction. Armed with science and wit, he must solve an impossible problem while making an unlikely alien ally. This thrilling hard science fiction adventure combines humor, heart, and mind-bending scientific challenges."
+		},
+		{
+			"id": 4,
+			"title": "Where the Crawdads Sing",
+			"author": "Delia Owels",
+			"price": 15.99,
+			"genre": "Mystery",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780735219090-L.jpg",
+			"featured": false,
+			"description": "In the marshlands of North Carolina, a young girl abandoned by her family survives alone in the wilderness while becoming an expert naturalist. When a local man is found dead, suspicion falls on the mysterious marsh girl. This haunting mystery intertwines survival, science, and secrets of the natural world."
+		},
+		{
+			"id": 5,
+			"title": "Educated",
+			"author": "Tara Westover",
+			"price": 16.49,
+			"genre": "Memoir",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780399590504-L.jpg",
+			"featured": false,
+			"description": "Raised by survivalists in the Idaho mountains with no formal education, Tara fights to gain an education and breaks free from her restrictive family. Her remarkable journey from isolation to Cambridge University challenges everything she thought she knew. This powerful memoir explores resilience, self-invention, and the transformative power of learning."
+		},
+		{
+			"id": 11,
+			"title": "1984",
+			"author": "George Orwell",
+			"price": 13.99,
+			"genre": "Science Fiction",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
+			"featured": false,
+			"description": "A totalitarian vision of the future."
+		},
+		{
+			"id": 12,
+			"title": "The Alchemist",
+			"author": "Paulo Coelho",
+			"price": 14.99,
+			"genre": "Fiction",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg",
+			"featured": false,
+			"description": "Santiago, a young shepherd boy, embarks on a transformative journey across deserts and continents in pursuit of his personal legend. Guided by omens and encounters with mysterious figures, he learns profound lessons about following dreams and listening to his heart. Coelho's philosophical fable explores destiny, personal transformation, and the power of pursuing what truly matters in life."
+		},
+		{
+			"id": 14,
+			"title": "The Hobbit",
+			"author": "J.R.R. Tolkien",
+			"price": 15.99,
+			"genre": "Fantasy",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg",
+			"featured": false,
+			"description": "Bilbo embarks on adventure."
+		},
+		{
+			"id": 15,
+			"title": "The Four Agreements",
+			"author": "Don Miguel Ruiz",
+			"price": 12.99,
+			"genre": "Self-Help",
+			"cover": "https://covers.openlibrary.org/b/isbn/9781878424310-L.jpg",
+			"featured": false,
+			"description": "Drawing on ancient Toltec wisdom, Don Miguel Ruiz presents four powerful agreements that can transform your life and free you from suffering. Be impeccable with your word, don't take anything personally, don't make assumptions, and always do your best. These simple yet profound principles offer a practical guide to personal freedom and authentic happiness."
+		},
+		{
+			"id": 16,
+			"title": "Gone Girl",
+			"author": "Gillian Flynn",
+			"price": 16.49,
+			"genre": "Thriller",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780307588371-L.jpg",
+			"featured": false,
+			"description": "On their anniversary, Amy Dunne vanishes under mysterious circumstances and her husband Nick becomes the prime suspect. Told through dual perspectives, this psychological thriller unravels a marriage filled with lies and manipulation. The shocking twists will keep you guessing and questioning everything until the final revelation."
+		},
+		{
+			"id": 18,
+			"title": "Harry Potter and the Sorcerer's Stone",
+			"author": "J.K. Rowling",
+			"price": 13.99,
+			"genre": "Fantasy",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780439136365-L.jpg",
+			"featured": false,
+			"description": "Young Harry Potter discovers he is a wizard and is invited to attend Hogwarts School of Witchcraft and Wizardry, where he makes his first true friends and uncovers magical mysteries. His life at the enchanted school sparks adventure and wonder while revealing dark secrets about his past. This beloved beginning launches an epic seven-book saga."
+		},
+		{
+			"id": 19,
+			"title": "The Subtle Art of Not Giving a F*ck",
+			"author": "Mark Manson",
+			"price": 15.99,
+			"genre": "Self-Help",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780062457714-L.jpg",
+			"featured": false,
+			"description": "Mark Manson challenges conventional self-help wisdom by embracing a more honest and practical approach to living well. Rather than forcing positivity, he teaches readers to choose what truly matters and let go of the rest. This refreshingly candid guide helps you identify your values and live a more authentic and meaningful life."
+		},
+		{
+			"id": 20,
+			"title": "To Kill a Mockingbird",
+			"author": "Harper Lee",
+			"price": 14.49,
+			"genre": "Classic",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780060935467-L.jpg",
+			"featured": false,
+			"description": "Through the eyes of young Scout Finch, Harper Lee explores racial injustice in the American South when her father defends a Black man falsely accused of a crime. Set in Depression-era Alabama, this novel powerfully examines themes of morality, courage, and the loss of innocence. A timeless masterpiece addressing prejudice and human dignity with unforgettable grace."
+		},
+		{
+			"id": 21,
+			"title": "The Lord of the Rings",
+			"author": "J.R.R. Tolkien",
+			"price": 22.99,
+			"genre": "Fantasy",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780544003415-L.jpg",
+			"featured": false,
+			"description": "Frodo Baggins must carry a magical ring to Mount Doom to save Middle-earth from the dark lord Sauron in this epic fantasy trilogy. Alongside a fellowship of hobbits, elves, dwarves, and men, he undertakes a perilous quest across unforgiving landscapes. Tolkien's masterwork explores themes of friendship, courage, and the corrupting nature of power."
+		},
+		{
+			"id": 22,
+			"title": "Dune",
+			"author": "Frank Herbert",
+			"price": 18.99,
+			"genre": "Science Fiction",
+			"cover": "https://books.google.com/books/content?id=B1hSG45JCX4C&printsec=frontcover&img=1&zoom=1&edge=curl",
+			"featured": false,
+			"description": "On the desert planet of Arrakis, young Paul Atreides becomes caught in a web of political intrigue and prophecy while his family fights for control of a precious resource. As Paul discovers hidden powers within himself, he must navigate betrayal and danger to fulfill his destiny. This sweeping space opera combines politics, religion, and ecology in a richly imagined universe."
+		},
+		{
+			"id": 23,
+			"title": "The Great Gatsby",
+			"author": "F. Scott Fitzgerald",
+			"price": 12.99,
+			"genre": "Classic",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg",
+			"featured": false,
+			"description": "Gatsby's mysterious wealth and lavish parties mask a desperate longing for a love from his past in the glittering world of Jazz Age New York. Through the eyes of narrator Nick Carraway, Fitzgerald captures the excess, romance, and moral decay of the era. This tragic novel remains a haunting exploration of the American Dream and its corruption."
+		},
+		{
+			"id": 24,
+			"title": "Pride and Prejudice",
+			"author": "Jane Austen",
+			"price": 11.99,
+			"genre": "Classic",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
+			"featured": false,
+			"description": "Elizabeth Bennet refuses to marry for anything less than love, challenging the social expectations of Regency England when she meets the proud and seemingly arrogant Mr. Darcy. Their witty verbal sparring masks a growing attraction as misunderstandings are gradually revealed. Austen's romantic comedy explores themes of independence, prejudice, and finding true love."
+		},
+		{
+			"id": 25,
+			"title": "The Catcher in the Rye",
+			"author": "J.D. Salinger",
+			"price": 13.99,
+			"genre": "Fiction",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780316769174-L.jpg",
+			"featured": false,
+			"description": "Holden Caulfield, a disillusioned teenager, wanders New York City after being expelled from school, struggling with alienation and the complexities of growing up. Through his cynical yet vulnerable voice, he grapples with loss, depression, and finding meaning in a world he sees as phoniness. This controversial novel captures the angst and confusion of adolescence."
+		},
+		{
+			"id": 28,
+			"title": "Jane Eyre",
+			"author": "Charlotte Brontë",
+			"price": 12.99,
+			"genre": "Mystery",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780141441146-L.jpg",
+			"featured": false,
+			"description": "Orphaned Jane Eyre becomes a governess and discovers unexpected love with the mysterious Mr. Rochester, but dark secrets threaten their happiness in this Gothic romance. Despite her humble beginnings and lack of beauty by society's standards, Jane's intelligence and moral strength draw her toward an extraordinary destiny. Brontë's heroine challenged Victorian conventions."
+		},
+		{
+			"id": 30,
+			"title": "The Brothers Karamazov",
+			"author": "Fyodor Dostoevsky",
+			"price": 19.99,
+			"genre": "Classic",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780374528379-L.jpg",
+			"featured": false,
+			"description": "Three brothers—Ivan, Dmitri, and Alyosha—explore faith, morality, suffering, and redemption in 19th century Russia while caught in a murder mystery. Through their philosophical debates and personal struggles, Dostoevsky grapples with fundamental questions about God, free will, and human nature. This sprawling masterpiece remains one of literature's greatest explorations of the human soul."
+		},
+		{
+			"id": 34,
+			"title": "The Count of Monte Cristo",
+			"author": "Alexandre Dumas",
+			"price": 15.99,
+			"genre": "Adventure",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780140449266-M.jpg",
+			"featured": false,
+			"description": "Wrongly imprisoned Edmond Dantès escapes, discovers a fortune in treasure, and orchestrates an elaborate plan of revenge against those who betrayed him in this swashbuckling adventure. With a new identity and unlimited wealth, he methodically brings justice and retribution to his enemies while rewarding the faithful. This thrilling tale explores betrayal, redemption, and the price of vengeance."
+		},
+		{
+			"id": 35,
+			"title": "The Three Musketeers",
+			"author": "Alexandre Dumas",
+			"price": 14.99,
+			"genre": "Adventure",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780143105008-M.jpg",
+			"featured": false,
+			"description": "Young D'Artagnan arrives in Paris seeking glory and becomes embroiled in adventures with three musketeers—Athos, Porthos, and Aramis—as they navigate court politics and danger in 17th century France. Their motto, \"All for one, and one for all,\" bonds them through countless escapades involving swordplay, intrigue, and romance. A classic adventure filled with honor, friendship, and excitement."
+		},
+		{
+			"id": 41,
+			"title": "Moby Dick",
+			"author": "Herman Melville",
+			"price": 17.99,
+			"genre": "Adventure",
+			"cover": "https://www.pagepublications.co/cdn/shop/files/9781648337031_1_c1b6fba0-fc90-4583-8900-88f0d35c6641.png",
+			"featured": false,
+			"description": "Captain Ahab's obsessive quest to hunt the white whale Moby Dick drives his ship and crew toward an epic showdown across the world's oceans in this American literary masterpiece. Through the eyes of sailor Ishmael, Melville explores themes of obsession, vengeance, and humanity's relationship with nature. This seafaring adventure transcends its action-packed plot with profound philosophical depth."
+		},
+		{
+			"id": 44,
+			"title": "A Tale of Two Cities",
+			"author": "Charles Dickens",
+			"price": 13.99,
+			"genre": "Classic",
+			"cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1344922523i/1953.jpg",
+			"featured": false,
+			"description": "Set during the French Revolution, Dickens weaves together the stories of characters in London and Paris as love and sacrifice unfold against the backdrop of violent social upheaval. A mysterious resurrection, a resurrection of hope, and the famous sacrifice \"It is a far, far better thing...\" create an unforgettable narrative. This epic novel captures chaos, redemption, and ultimate transformation."
+		},
+		{
+			"id": 45,
+			"title": "Becoming",
+			"author": "Michelle Obama",
+			"price": 17.99,
+			"genre": "Memoir",
+			"cover": "https://covers.openlibrary.org/b/isbn/9781524763138-L.jpg",
+			"featured": false,
+			"description": "Michelle Obama shares her remarkable journey from childhood on the South Side of Chicago to becoming First Lady of the United States. With candid honesty, she reflects on her education, career, family, and experiences navigating race, identity, and motherhood in the public eye. This intimate memoir offers inspiration and wisdom about resilience, growth, and finding your voice."
+		},
+
+		{
+			"id": 50,
+			"title": "Beloved",
+			"author": "Toni Morrison",
+			"price": 16.99,
+			"genre": "Classic",
+			"cover": "https://m.media-amazon.com/images/I/71x8mXSUSDL._AC_UF1000,1000_QL80_.jpg",
+			"featured": false,
+			"description": "A haunting exploration of slavery's trauma unfolds when Sethe is visited by the ghost of her daughter Beloved at her Ohio home after the Civil War. Morrison weaves together past and present as the family confronts unspeakable pain and the possibility of healing and redemption. This groundbreaking novel remains a powerful testament to resilience and love amid suffering."
+		},
+		{
+			"id": 51,
+			"title": "Wuthering Heights",
+			"author": "Emily Brontë",
+			"price": 12.99,
+			"genre": "Mystery",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780141439556-L.jpg",
+			"featured": false,
+			"description": "On the windswept Yorkshire moors, Heathcliff and Cathy's passionate love becomes tangled with revenge and obsession that spans generations and destroys those around them. Narrated through letters and recollections, the novel explores the destructive power of unbridled emotion and social class divisions. Brontë's gothic masterpiece remains darkly captivating in its intensity and emotional depth."
+		},
+		{
+			"id": 52,
+			"title": "The Picture of Dorian Gray",
+			"author": "Oscar Wilde",
+			"price": 11.99,
+			"genre": "Thriller",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780141439570-L.jpg",
+			"featured": false,
+			"description": "Dorian Gray, a beautiful young man, makes a dark wish that his portrait will age instead of him, allowing him to indulge in vice and corruption while maintaining his youthful appearance. As the painting reveals his moral decay, Dorian's descent into depravity becomes increasingly monstrous. Wilde's provocative novella explores vanity, corruption, and the price of immortality and beauty."
+		},
+		{
+			"id": 53,
+			"title": "The Eyes of Gaza: A Diary of Resilience",
+			"author": "Ahed Tamimi",
+			"price": 17.99,
+			"genre": "Memoir",
+			"cover": "https://books.google.com/books/publisher/content?id=slpKEQAAQBAJ&pg=PA1&img=1&zoom=3&hl=en&sig=ACfU3U1NLpZ7i4SFMYS0E2sM4PQo9o9s7g&w=1280",
+			"featured": false,
+			"description": "Ahed Tamimi, a Palestinian activist, shares her powerful diary documenting her life, resistance, and resilience in Gaza amid ongoing conflict and occupation. Through personal reflections and intimate moments, she provides a firsthand account of daily struggles, hope, and the human cost of political conflict. This compelling memoir offers a young woman's perspective on survival, family, and the unwavering spirit of a people refusing to be broken."
+		},
+		{
+			"id": 54,
+			"title": "The Odyssey",
+			"author": "Homer",
+			"price": 15.99,
+			"genre": "Adventure",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780140268867-L.jpg",
+			"featured": false,
+			"description": "Odysseus's ten-year journey home after the Trojan War tests his courage, wit, and perseverance as he encounters mythological monsters, gods, and trials across the ancient Mediterranean. Separated from his wife Penelope and son Telemachus, he must overcome countless obstacles to reclaim his throne. Homer's epic explores heroism, loyalty, and the timeless human yearning for home."
+		},
+		{
+			"id": 55,
+			"title": "Treasure Island",
+			"author": "Robert Louis Stevenson",
+			"price": 12.99,
+			"genre": "Adventure",
+			"cover": "https://m.media-amazon.com/images/I/91YuctKKlJL._SY522_.jpg",
+			"featured": false,
+			"description": "Young Jim Hawkins embarks on a thrilling adventure aboard a ship in search of buried pirate treasure, accompanied by a colorful crew including the treacherous Long John Silver. Danger lurks at every turn as Jim must outwit the ruthless pirates who will stop at nothing to find the riches. Stevenson's classic adventure tale captivates readers with swashbuckling action and moral complexity."
+		},
+
+		{
+			"id": 59,
+			"title": "The Hunger Games",
+			"author": "Suzanne Collins",
+			"price": 15.99,
+			"genre": "Fantasy",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780439023481-L.jpg",
+			"featured": false,
+			"description": "In a dystopian future, sixteen-year-old Katniss Everdeen volunteers as tribute in a deadly televised competition where young people battle to the death for the entertainment of the ruling class. Her rebellion against this oppressive system sparks hope in an oppressed nation while she navigates survival, love, and the moral cost of violence. Collins' gripping trilogy examines power, propaganda, and revolution."
+		},
+		{
+			"id": 60,
+			"title": "Percy Jackson & The Olympians",
+			"author": "Rick Riordan",
+			"price": 14.99,
+			"genre": "Fantasy",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780786838653-L.jpg",
+			"featured": false,
+			"description": "Percy Jackson discovers that he is the son of Poseidon and is whisked away to a summer camp for demigods where he learns to harness his newfound powers. With his friends Annabeth and Grover, he embarks on a cross-country quest to prevent war among the gods and save his mother. Riordan's imaginative series blends ancient mythology with modern adventure and humor."
+		},
+		{
+			"id": 62,
+			"title": "A Court of Thorns and Roses",
+			"author": "Sarah J. Maas",
+			"price": 16.99,
+			"genre": "Fantasy",
+			"cover": "https://covers.openlibrary.org/b/isbn/9781619635180-L.jpg",
+			"featured": false,
+			"description": "Feyre, a human huntress, is captured by a faerie warrior and taken to his magical court where she discovers a dangerous world of beauty and intrigue. As she uncovers secrets about the faerie realm and develops feelings for her captor, she becomes entangled in a larger conflict with world-altering consequences. Maas's lush fantasy explores love, loyalty, and the cost of choices in a richly imagined realm."
+		},
+		{
+			"id": 63,
+			"title": "The Girl on the Train",
+			"author": "Paula Hawkins",
+			"price": 16.49,
+			"genre": "Thriller",
+			"cover": "https://covers.openlibrary.org/b/isbn/9781594633669-L.jpg",
+			"featured": false,
+			"description": "Rachel, an unreliable narrator wracked with depression and alcoholism, becomes obsessed with a couple she observes from her daily train commute, only to find herself entangled in a murder investigation. As three women's lives intersect—the girl on the train, the woman she watches, and the victim—perspectives shift and lies unravel to reveal shocking truths. Hawkins' psychological thriller keeps readers guessing throughout."
+		},
+		{
+			"id": 64,
+			"title": "The Haunting of Hill House",
+			"author": "Shirley Jackson",
+			"price": 14.99,
+			"genre": "Mystery",
+			"cover": "https://m.media-amazon.com/images/I/8138L2-9TzL._AC_UF1000,1000_QL80_.jpg",
+			"featured": true,
+			"description": "Eleanor Vance joins a paranormal investigation at the mysterious Hill House, an old mansion with a sinister reputation. As strange and terrifying events unfold, the line between reality and imagination blurs for Eleanor and her fellow investigators. Jackson's psychological horror masterpiece explores themes of isolation, belonging, and the power of the mind to create terror."
+		},
+		{
+			"id": 65,
+			"title": "The Shining",
+			"author": "Stephen King",
+			"price": 17.99,
+			"genre": "Thriller",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780345806789-L.jpg",
+			"featured": true,
+			"description": "Jack Torrance becomes the winter caretaker of the isolated Overlook Hotel, where his family encounters supernatural horrors and his son Danny's psychic abilities become the key to their survival. As Jack's sanity deteriorates and the hotel's dark forces close in, the family fights for their lives in a battle between good and evil. King's iconic horror novel explores madness, addiction, and the supernatural."
+		},
+		{
+			"id": 66,
+			"title": "Twilight",
+			"author": "Stephenie Meyer",
+			"price": 15.99,
+			"genre": "Fantasy",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780316015844-L.jpg",
+			"featured": true,
+			"description": "Bella Swan moves to the small, rainy town of Forks, Washington, where she meets the mysterious Edward Cullen and discovers he is part of a vampire family living secretly among humans. As Bella falls deeply in love with Edward, she becomes entangled in a paranormal world of danger, desire, and eternal love. Meyer's modern vampire romance explores forbidden attraction, choice, and the consequences of love across species."
+		},
+		{
+			"id": 67,
+			"title": "The Woman in Black",
+			"author": "Susan Hill",
+			"price": 12.99,
+			"genre": "Mystery",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780099288473-L.jpg",
+			"featured": true,
+			"description": "Young lawyer Arthur Kipps travels to a remote English village to settle the affairs of a deceased client, only to encounter a vengeful ghost haunting the local estate. As Arthur uncovers the tragic history behind the woman in black, he becomes trapped in her curse. Hill's atmospheric Gothic tale masterfully builds suspense and explores love, loss, and the supernatural."
+		},
+		{
+			"id": 68,
+			"title": "Mexican Gothic",
+			"author": "Silvia Moreno-Garcia",
+			"price": 18.99,
+			"genre": "Thriller",
+			"cover": "https://covers.openlibrary.org/b/isbn/9780525620785-L.jpg",
+			"featured": true,
+			"description": "Socialite Noemí Taboada travels to the Mexican countryside to check on her cousin who claims the family mansion is haunted. Arriving at the decaying estate of the enigmatic Doyle family, she discovers a house filled with dark secrets, corruption, and genuine supernatural terror. Moreno-Garcia's lush Gothic horror weaves Mexican folklore with psychological dread in this atmospheric tale of family curses."
+		},
+		{
+			"id": 69,
+			"title": "The Silent Companions",
+			"author": "Laura Purcell",
+			"price": 16.99,
+			"genre": "Mystery",
+			"cover": "https://covers.openlibrary.org/b/isbn/9781408888094-L.jpg",
+			"featured": true,
+			"description": "Newlyweds move into an ancestral estate where they discover a series of wooden figures painted with disturbing lifelike portraits. As the panels are gradually revealed, the line between reality and illusion blurs, and the couple realizes the paintings may be trying to tell them something sinister. Purcell's dark Victorian mystery builds an atmosphere of creeping dread with each haunting revelation."
+		}
+	],
+	"blogPosts": [
+		{
+			"id": 1,
+			"type": "book-highlight",
+			"title": "October Favorites",
+			"hero-img": "images/blog/october-blog-splash.jpg",
+			"hero-text": "Spooky Season",
+			"hero-quote": "In the dead of night, the veil between worlds grows thin, and the shadows whisper secrets that daylight dares not speak.",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nunc id cursus metus aliquam eleifend mi. Massa vitae tortor condimentum lacinia quis vel eros.",
+			"books": [64, 66]
+		},
+		{
+			"id": 2,
+			"type": "normal",
+			"title": "Switching to E-Reading?",
+			"previewImg": "images/blog/ereading.png",
+			"heroImg": "images/blog/eread-hero.png",
+			"heroText": "What e-readers are best for you? everything you need to know about electronic reading!",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nunc id cursus metus aliquam eleifend mi. Massa vitae tortor condimentum lacinia quis vel eros.",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis in eu mi bibendum neque egestas. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Diam in arcu cursus euismod quis viverra nibh. Massa sed elementum tempus egestas sed sed risus pretium. Aliquet eget sit amet tellus cras adipiscing enim eu. Viverra nibh cras pulvinar mattis nunc sed blandit libero. Auctor urna nunc id cursus metus. Mauris a diam maecenas sed enim ut. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Etiam non quam lacus suspendisse. Pulvinar elementum integer enim neque volutpat ac tincidunt. Dolor morbi non arcu risus. Maecenas volutpat blandit aliquam etiam erat velit scelerisque. Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a. Scelerisque purus semper eget duis at tellus at. Ornare arcu dui vivamus arcu felis. Risus at ultrices mi tempus imperdiet. In cursus turpis massa tincidunt dui. Vitae suscipit tellus mauris a diam maecenas. Dictumst quisque sagittis purus sit amet volutpat. Varius morbi enim nunc faucibus a pellentesque. Volutpat sed cras ornare arcu. Dictum varius duis at consectetur lorem donec. In nibh mauris cursus mattis molestie a iaculis at. Sit amet commodo nulla facilisi. Quam adipiscing vitae proin sagittis. Egestas sed tempus urna et pharetra. Auctor elit sed vulputate mi sit. Elit scelerisque mauris pellentesque pulvinar pellentesque. Vel orci porta non pulvinar neque laoreet suspendisse interdum. Accumsan in nisl nisi scelerisque eu ultrices. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. At ultrices mi tempus imperdiet nulla malesuada pellentesque. Enim ut sem viverra aliquet. Feugiat vivamus at augue eget arcu dictum. Leo vel orci porta non pulvinar. Enim blandit volutpat maecenas volutpat. Egestas maecenas pharetra convallis posuere morbi leo. Sed tempus urna et pharetra pharetra massa massa ultricies. In nibh mauris cursus mattis molestie a iaculis. Eu non diam phasellus vestibulum lorem. Quis lectus nulla at volutpat diam ut. Mattis rhoncus urna neque viverra justo. Morbi tincidunt augue interdum velit euismod in. Habitasse platea dictumst quisque sagittis. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Placerat in egestas erat imperdiet sed. A condimentum vitae sapien pellentesque. Pretium viverra suspendisse potenti nullam ac tortor vitae. Ut diam quam nulla porttitor massa id neque. Sodales ut etiam sit amet nisl purus in. Nulla facilisi morbi tempus iaculis urna id volutpat lacus laoreet."
+		},
+		{
+			"id": 3,
+			"type": "normal",
+			"title": "All About BookClubs",
+			"previewImg": "images/blog/open-book-blog.png",
+			"heroImg": "images/blog/book-club-hero.png",
+			"heroText": "What books are best for book club?  Everything you need to know about hosting your own!",
+			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nunc id cursus metus aliquam eleifend mi. Massa vitae tortor condimentum lacinia quis vel eros.",
+			"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Turpis in eu mi bibendum neque egestas. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Diam in arcu cursus euismod quis viverra nibh. Massa sed elementum tempus egestas sed sed risus pretium. Aliquet eget sit amet tellus cras adipiscing enim eu. Viverra nibh cras pulvinar mattis nunc sed blandit libero. Auctor urna nunc id cursus metus. Mauris a diam maecenas sed enim ut. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Etiam non quam lacus suspendisse. Pulvinar elementum integer enim neque volutpat ac tincidunt. Dolor morbi non arcu risus. Maecenas volutpat blandit aliquam etiam erat velit scelerisque. Ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a. Scelerisque purus semper eget duis at tellus at. Ornare arcu dui vivamus arcu felis. Risus at ultrices mi tempus imperdiet. In cursus turpis massa tincidunt dui. Vitae suscipit tellus mauris a diam maecenas. Dictumst quisque sagittis purus sit amet volutpat. Varius morbi enim nunc faucibus a pellentesque. Volutpat sed cras ornare arcu. Dictum varius duis at consectetur lorem donec. In nibh mauris cursus mattis molestie a iaculis at. Sit amet commodo nulla facilisi. Quam adipiscing vitae proin sagittis. Egestas sed tempus urna et pharetra. Auctor elit sed vulputate mi sit. Elit scelerisque mauris pellentesque pulvinar pellentesque. Vel orci porta non pulvinar neque laoreet suspendisse interdum. Accumsan in nisl nisi scelerisque eu ultrices. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. At ultrices mi tempus imperdiet nulla malesuada pellentesque. Enim ut sem viverra aliquet. Feugiat vivamus at augue eget arcu dictum. Leo vel orci porta non pulvinar. Enim blandit volutpat maecenas volutpat. Egestas maecenas pharetra convallis posuere morbi leo. Sed tempus urna et pharetra pharetra massa massa ultricies. In nibh mauris cursus mattis molestie a iaculis. Eu non diam phasellus vestibulum lorem. Quis lectus nulla at volutpat diam ut. Mattis rhoncus urna neque viverra justo. Morbi tincidunt augue interdum velit euismod in. Habitasse platea dictumst quisque sagittis. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Placerat in egestas erat imperdiet sed. A condimentum vitae sapien pellentesque. Pretium viverra suspendisse potenti nullam ac tortor vitae. Ut diam quam nulla porttitor massa id neque. Sodales ut etiam sit amet nisl purus in. Nulla facilisi morbi tempus iaculis urna id volutpat lacus laoreet."
+		}
+	]
+}
