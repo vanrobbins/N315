@@ -25,10 +25,13 @@ class AppController {
 		$(`.mobile-nav-content a[href="${initialHash}"]`).addClass("active");
 	}
 	setActive(pageID) {
+		// Extract just the page name, ignore query parameters and # prefix
+		const pageName = pageID.replace("#", "").split("?")[0];
+
 		$(`#nav-links a`).removeClass("active");
-		$(`#nav-links a[href="${pageID}"]`).addClass("active");
+		$(`#nav-links a[href="#${pageName}"]`).addClass("active");
 		$(`.mobile-nav-content a`).removeClass("active");
-		$(`.mobile-nav-content a[href="${pageID}"]`).addClass("active");
+		$(`.mobile-nav-content a[href="#${pageName}"]`).addClass("active");
 	}
 	initRouting() {
 		$(window).on("hashchange", () => this.route());
@@ -141,7 +144,7 @@ class AppController {
 						</div>
 							<p class="book-price">$${book.price.toFixed(2)}</p>
 						<button class="btn-add-cart">
-								Add to Cart</button>
+								ADD TO CART</button>
 						</div>
 					</div>
 				`;
@@ -174,7 +177,7 @@ class AppController {
 								<p>${book.description}</p>
 							</div>
 							<p class="book-price">$${book.price.toFixed(2)}</p>
-							<button class="btn-add-cart">Add to Cart</button>
+							<button class="btn-add-cart">ADD TO CART</button>
 						</div>
 					</div>`;
 				categoryDiv.find(`#${sanitizedKey}-books`).append(bookCard);
@@ -201,12 +204,20 @@ class AppController {
 
 			// Generate the post content based on type
 			let postContent;
+			const overlayColor = getComputedStyle(document.documentElement).getPropertyValue("--color-hero-overlay").trim();
 			switch (post.type) {
 				case "normal":
 					postContent = `
-						<img class="blog-detail-img" src="../../${post.previewImg}" alt="${post.title}"/>
-						<h1>${post.title.toUpperCase()}</h1>
-						<p class="blog-content">${post.content}</p>
+					<div class="blog-hero" style="background-image: linear-gradient(${overlayColor}, ${overlayColor}), url('../../${
+						post.heroImg
+					}')">
+							<h1>${post.title.toUpperCase()}</h1>
+							<h4>${post.heroText}</h4>
+						</div>
+						<div class="blog-content">
+							<img class="blog-detail-img" src="../../${post.previewImg}" alt="${post.title}"/>
+							<p class="blog-txt-content">${post.content}</p>
+						</div>
 					`;
 					break;
 				case "book-highlight":
@@ -214,19 +225,28 @@ class AppController {
 					const bookImages = highlightBooks
 						.map(
 							(book) => `
-							<div class="highlight-book">
+							<div class="highlight-book" data-book-id="${book.id}">
 								<img src="${book.cover}" alt="${book.title}"/>
+								<div class="book-text" >
+									<h1 class="">${book.title} By ${book.author}</h1>
+									<p>${book.description}</p>
+								</div>
 							</div>
 						`
 						)
 						.join("");
 					postContent = `
-						<div class="blog-p-books">
-							${bookImages}
-						</div>
+					<div class="blog-hero" style="background-image: linear-gradient(${overlayColor}, ${overlayColor}), url('../../${
+						post.heroImg
+					}')">
 						<h1>${post.title.toUpperCase()}</h1>
-						<p class="blog-content">${post.description}</p>
-						<p class="blog-content">${post.content || ""}</p>
+						<h4>${post.heroText}</h4>
+					</div>
+						<div class="blog-content">
+							<div class="blog-p-books">
+							${bookImages}
+							</div>
+						</div>
 					`;
 					break;
 				default:
@@ -264,11 +284,11 @@ class AppController {
 				case "normal":
 					blogPost = `
 					<div class=blog-post data-post-id="${post.id}">
-						<div class="blog-p-img" style="background-image:url(../../${post.previewImg})"></div>
+						<div class="blog-p-img" style="background-image: url('../../${post.previewImg}')"></div>
 						<div class="blog-preview">
 							<h1>${post.title.toUpperCase()}</h1>
 							<p>${post.description}</p>
-							<button class="btn-read-more">Read More</button>
+							<button class="btn-read-more">READ MORE</button>
 						</div>
 					</div>`;
 
@@ -286,7 +306,7 @@ class AppController {
 						<div class="blog-preview">
 							<h1>${post.title.toUpperCase()}</h1>
 							<p>${post.description}</p>
-							<button class="btn-read-more">Read More</button>
+							<button class="btn-read-more">READ MORE</button>
 						</div>
 					</div>`;
 					break;

@@ -956,3 +956,94 @@ footer #ft-socials .social-icon {
     gap: clamp(8.8vw, 8.8vw - 3.4rem, 3.4rem);
   }
 }
+
+#blog {
+  padding: 7.3125rem 0rem 8.75rem 1.875rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7.8125rem;
+}
+#blog .blog-post {
+  width: clamp(76.25vw, 76.25vw - 91.5rem, 91.5rem);
+  aspect-ratio: 3.161;
+  padding-right: clamp(8.6vw, 8.6vw - 10.375rem, 10.375rem);
+  background-color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#blog .blog-post .blog-p-books {
+  height: 82%;
+  margin-left: clamp(6%, 6% - 5.5rem, 5.5rem);
+  display: flex;
+  width: 48.4%;
+  justify-content: space-between;
+  align-items: center;
+}
+#blog .blog-post .blog-p-books .highlight-book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(13vw, 13vw - 15.625rem, 15.625rem);
+  aspect-ratio: 0.658;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+#blog .blog-post .blog-p-books .highlight-book img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+#blog .blog-post .blog-p-img {
+  height: 100%;
+  width: calc(48.4% + clamp(0.5%, 0.5% - 0.5rem, 0.5rem));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#blog .blog-post .blog-preview {
+  width: clamp(23.5vw, 23.5vw - 28.125rem, 28.125rem);
+  padding: 4.5rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-fg-three);
+}
+#blog .blog-post .blog-preview h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: inherit;
+  margin-bottom: 3.75rem;
+}
+#blog .blog-post .blog-preview p {
+  color: inherit;
+  max-width: 92%;
+  margin-bottom: 2.5rem;
+}
+#blog .blog-post .blog-preview .btn-read-more {
+  margin: auto;
+  width: 53%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0rem;
+  background-color: var(--color-accent);
+  color: var(--color-fg-three);
+  border: var(--color-fg-three) solid 1px;
+  border-radius: 0.1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background-color 200ms;
+  margin: 0;
+  transition: box-shadow, background-color 300ms;
+}
+#blog .blog-post .blog-preview .btn-read-more:hover {
+  color: var(--color-fg-three);
+  background-color: var(--color-focus);
+  box-shadow: 0px 4px 4px var(--color-shadow-dark), 0px 12px 12px var(--color-shadow-light);
+}

@@ -418,9 +418,9 @@
 			"id": 1,
 			"type": "book-highlight",
 			"title": "October Favorites",
-			"hero-img": "images/blog/october-blog-splash.jpg",
-			"hero-text": "Spooky Season",
-			"hero-quote": "In the dead of night, the veil between worlds grows thin, and the shadows whisper secrets that daylight dares not speak.",
+			"heroImg": "images/blog/october-blog-hero.jpg",
+			"heroText": "Spooky Season",
+			"heroQuote": "In the dead of night, the veil between worlds grows thin, and the shadows whisper secrets that daylight dares not speak.",
 			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna nunc id cursus metus aliquam eleifend mi. Massa vitae tortor condimentum lacinia quis vel eros.",
 			"books": [64, 66]
 		},

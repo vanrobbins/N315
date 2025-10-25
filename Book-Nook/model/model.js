@@ -178,7 +178,11 @@ class BlogModel {
 	}
 	async getPostById(id) {
 		await this.loadBlog();
-		return this.blogPosts.find((post) => post.id === parseInt(id));
+		const post = this.blogPosts.find((post) => post.id === parseInt(id));
+		if (post) {
+			return post;
+		}
+		return;
 	}
 	async getAllPosts() {
 		await this.loadBlog();
