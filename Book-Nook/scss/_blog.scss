@@ -14,6 +14,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		border: $color-border 1px solid;
+		border-radius: 0.1rem;
 		.blog-p-books {
 			height: 82%;
 			margin-left: clamp(6%, calc(6% - 5.5rem), 5.5rem);
@@ -89,5 +91,11 @@
 				}
 			}
 		}
+	}
+	@media (max-width: 70rem) {
+	}
+	@media (max-width: 54rem) {
+	}
+	@media (max-width: 30rem) {
 	}
 }
