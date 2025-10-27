@@ -16,5 +16,5 @@
 #example files
 /examples
 
-#env
-.env
+#sftp
+sftp.json

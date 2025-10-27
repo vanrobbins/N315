@@ -1,0 +1,137 @@
+/* Simple site and nav styles - mobile friendly */
+:root {
+	--nav-bg: #1f2937; /* slate-800 */
+	--nav-contrast: #ffffff;
+	--nav-hover: rgba(255, 255, 255, 0.08);
+	--brand-color: #10b981; /* emerald */
+}
+
+/* Basic page reset */
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+	margin: 0;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+	color: #111;
+}
+
+header {
+	background: var(--nav-bg);
+	color: var(--nav-contrast);
+	padding: 0.5rem 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	width: 100%;
+}
+
+#brand {
+	font-weight: 700;
+	color: var(--brand-color);
+	font-size: 1.1rem;
+}
+/* Scope list and links inside nav to avoid global resets */
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 0.25rem;
+	align-items: center;
+}
+
+a {
+	color: var(--nav-contrast);
+	text-decoration: none;
+	padding: 0.5rem 0.75rem;
+	display: block;
+	border-radius: 6px;
+	transition: background-color 0.15s ease, color 0.15s ease;
+	font-weight: 600;
+}
+
+nav a:hover,
+nav a:focus {
+	background: var(--nav-hover);
+	outline: none;
+}
+
+/* Optional IDs used by some markup patterns (leave harmless if not present) */
+#login,
+#signup {
+	border-radius: 5px;
+	padding: 5px 8px;
+}
+#login {
+	border: 1px solid lightblue;
+}
+#signup {
+	border: 1px solid pink;
+}
+#login a {
+	color: lightblue;
+}
+#signup a {
+	color: pink;
+}
+
+/* Hamburger icon and mobile menu (fix typos and transitions) */
+.hamburger-icon {
+	display: none; /* shown only on small screens */
+	margin: 0;
+	cursor: pointer;
+	z-index: 40;
+}
+.hamburger-icon div {
+	width: 35px;
+	height: 3px;
+	background-color: #fff;
+	margin: 6px 0;
+	transition: 0.4s;
+}
+
+/* Open state transforms for three bars */
+.open .bar1 {
+	transform: rotate(45deg) translate(6px, 6px);
+}
+.open .bar2 {
+	opacity: 0;
+	transform: translateX(-20px);
+}
+.open .bar3 {
+	transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.mobile-menu {
+	display: none;
+	position: absolute;
+	top: 50px;
+	left: 0;
+	height: calc(100vh - 50px);
+	width: 100%;
+	background: var(--nav-bg);
+	padding-top: 8px;
+	z-index: 30;
+}
+.open .mobile-menu {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+@media only screen and (max-width: 900px) {
+	header nav {
+		display: none;
+	}
+	/* show the hamburger (use class selector - matches the HTML) */
+	.hamburger-icon {
+		display: block;
+	}
+}
+/* End of nav styles */

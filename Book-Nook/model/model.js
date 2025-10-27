@@ -98,7 +98,7 @@ class BooksModel {
 			return this.books;
 		}
 		try {
-			const data = await $.getJSON("../data/data.json");
+			const data = await $.getJSON("./data/data.json");
 			this.books = data.books;
 			this.loaded = true;
 			return this.books;
@@ -167,7 +167,7 @@ class BlogModel {
 			return this.blogPosts;
 		}
 		try {
-			const data = await $.getJSON("../data/data.json");
+			const data = await $.getJSON("./data/data.json");
 			this.blogPosts = data.blogPosts;
 			this.loaded = true;
 			return this.blogPosts;

@@ -18,7 +18,7 @@
 			width: 100%;
 			aspect-ratio: 93.75 / 33.125;
 			max-height: 33.125rem;
-			background-image: linear-gradient($color-hero-overlay, $color-hero-overlay), url("../../images/home-hero.png");
+			background-image: linear-gradient($color-hero-overlay, $color-hero-overlay), url("../images/home-hero.png");
 			background-size: cover;
 			background-position: center;
 			border: 1px solid $color-border;
@@ -129,7 +129,7 @@
 				max-width: 17.0625rem;
 				height: auto;
 				aspect-ratio: 273/181;
-				background-image: url("../../images/home-hero.png");
+				background-image: url("../images/home-hero.png");
 				background-position: center;
 				background-size: contain;
 				background-repeat: no-repeat;
