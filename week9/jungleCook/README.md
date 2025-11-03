@@ -15,7 +15,7 @@ with joy!
 
 ```bash
 git clone https://github.com/vanrobbins/N315.git
-cd Book-Nook
+cd jungleCook
 ```
 
 2. Install dependencies:
