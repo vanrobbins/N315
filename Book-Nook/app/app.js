@@ -215,7 +215,7 @@ class AppController {
 							<h4>${post.heroText}</h4>
 						</div>
 						<div class="blog-content">
-							<img class="blog-detail-img" src="../${post.previewImg}" alt="${post.title}"/>
+							<img class="blog-detail-img" src="./${post.previewImg}" alt="${post.title}"/>
 							<p class="blog-txt-content">${post.content}</p>
 						</div>
 					`;
@@ -284,7 +284,7 @@ class AppController {
 				case "normal":
 					blogPost = `
 					<div class=blog-post data-post-id="${post.id}">
-						<div class="blog-p-img" style="background-image: url('../${post.previewImg}')"></div>
+						<div class="blog-p-img" style="background-image: url('./${post.previewImg}')"></div>
 						<div class="blog-preview">
 							<h1>${post.title.toUpperCase()}</h1>
 							<p>${post.description}</p>
