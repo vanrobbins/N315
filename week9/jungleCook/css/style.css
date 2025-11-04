@@ -204,13 +204,31 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+span {
   margin-bottom: 1rem;
   color: var(--color-fg);
+  letter-spacing: 10%;
 }
 
 li a {
   font-family: "Caveat";
+  letter-spacing: 10%;
+}
+
+button {
+  color: var(--color-fg);
+  font-family: "Caveat";
+  padding: 0.4em 1em;
+  background-color: var(--color-brand-yellow);
+  border-radius: 1em;
+  box-shadow: 0px 12px 12px var(--color-shadow-light);
+  border: none;
+  transition: box-shadow ease 400ms;
+  letter-spacing: 10%;
+}
+button:hover {
+  box-shadow: 0px 4px 4px var(--color-shadow-dark), 0px 12px 12px var(--color-shadow-light);
 }
 
 header {
@@ -280,7 +298,7 @@ header #logo .fourCircLogo {
 header nav {
   display: flex;
   align-items: center;
-  width: 43%;
+  width: 46%;
   height: 100%;
 }
 header ul {
@@ -324,7 +342,7 @@ header a:hover::after, header a:focus-visible::after, header a.active::after {
 header .nav-actions {
   height: 100%;
 }
-header .login-btn {
+header #nav-login-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -333,36 +351,48 @@ header .login-btn {
   border-radius: 1.625rem;
   background-color: var(--color-brand-yellow);
   box-shadow: 0px 12px 12px var(--color-shadow-light);
-  transition: box-shadow ease-in-out 500ms;
+  transition: box-shadow ease 400ms;
   /* make the anchor fill the button so hover targets the full area */
 }
-header .login-btn a {
+header #nav-login-btn a {
   display: block;
   width: 100%;
   height: 100%;
   text-align: center;
   line-height: inherit;
 }
-header .login-btn::after {
+header #nav-login-btn::after {
   /* force-hide underline pseudo so global hover rules can't re-enable it */
   display: none;
 }
-header .login-btn:hover::after {
+header #nav-login-btn:hover::after {
   display: none;
 }
-header .login-btn {
+header #nav-login-btn:hover, header #nav-login-btn.active {
   /* apply hover/active to the whole .login-btn element so it's easier to hit */
-}
-header .login-btn:hover, header .login-btn.active {
   box-shadow: 0px 4px 4px var(--color-shadow-dark), 0px 12px 12px var(--color-shadow-light);
 }
+header #nav-login-btn.active:hover {
+  box-shadow: 0px 4px 4px var(--color-shadow-dark);
+}
 
-@media (max-width: 70rem) {
+@media (max-width: 80rem) {
   header {
     font-size: 1.5625rem;
   }
+}
+@media (max-width: 70rem) {
   header .login-btn {
     width: 9vw;
+  }
+  header nav {
+    width: 50%;
+  }
+}
+@media (max-width: 56.25rem) {
+  header #nav-login-btn {
+    width: auto;
+    padding: 0 1.5em;
   }
 }
 /* Hamburger icon and mobile menu (fix typos and transitions) */
@@ -392,15 +422,12 @@ header .login-btn:hover, header .login-btn.active {
   z-index: 25; /* sit behind the mobile menu (z-index:30) */
 }
 
-/* Open state transforms for three bars */
 .open .bg-overlay {
   display: block;
   opacity: 1;
 }
-.open {
-  /* Open state transforms for three bars */
-}
 .open .bar1 {
+  /* Open state transforms for three bars */
   transform: rotate(45deg) translate(6px, 6px);
 }
 .open .bar2 {
@@ -434,7 +461,7 @@ header .login-btn:hover, header .login-btn.active {
   transition: opacity ease 400ms;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
   header nav {
     display: none;
   }
@@ -462,6 +489,9 @@ footer #ft-copyright {
   display: flex;
   align-items: center;
   letter-spacing: 10%;
+}
+footer #ft-copyright span {
+  margin: 0;
 }
 footer #ft-links {
   display: flex;
@@ -541,16 +571,12 @@ footer #ft-socials .social-icon {
     order: 1;
     flex: 0 1 auto;
   }
-  footer {
-    /* push socials to the right on the top row */
-  }
   footer #ft-socials {
+    /* push socials to the right on the top row */
     margin-left: auto;
   }
-  footer {
-    /* place links on their own centered row below */
-  }
   footer #ft-links {
+    /* place links on their own centered row below */
     order: 2;
     width: 100%;
     text-align: center;
@@ -597,7 +623,6 @@ body:has(#home) {
 }
 .big-circle h1 {
   font-weight: 700;
-  font-style: Bold;
   font-size: 1.875rem;
   letter-spacing: 10%;
   margin: 0;
@@ -611,6 +636,7 @@ body:has(#home) {
   text-align: center;
   color: var(--color-fg);
   max-width: 46%;
+  margin: 0;
 }
 
 .small-circle {
@@ -693,7 +719,6 @@ body:has(#home) {
   }
 }
 body:has(#login) {
-  max-height: 100vh;
   background-color: var(--color-brand-yellow);
   background-size: cover;
   background-position: center;
@@ -701,8 +726,21 @@ body:has(#login) {
 
 #login {
   display: flex;
+  flex: 1;
   justify-content: space-evenly;
+  align-items: center;
   color: var(--color-fg);
+}
+#login span {
+  margin-bottom: 0.25rem;
+}
+#login h1 {
+  margin-bottom: 3.75rem;
+  font-size: 2rem;
+  letter-spacing: 10%;
+}
+#login label {
+  margin-bottom: 0.25rem;
 }
 #login input {
   color: var(--color-fg);
@@ -710,13 +748,55 @@ body:has(#login) {
   border: none;
   outline: none;
   box-shadow: none;
+  margin-bottom: 2.25rem;
+  padding-left: 0.1ch;
 }
-#loginForm {
+#login button {
+  font-size: 2rem;
+  width: 100%;
+}
+
+.login-forms {
   display: flex;
   flex-direction: column;
 }
 
+#loginForm {
+  width: 16.4vw;
+}
+
 #signupForm {
-  display: flex;
-  flex-direction: column;
+  width: 19.5vw;
+}
+
+@media (max-width: 80rem) {
+  #login h1 {
+    font-size: 1.875rem;
+  }
+  #login span {
+    font-size: 0.75rem;
+  }
+  #login button {
+    font-size: 1.5625rem;
+  }
+}
+@media (max-width: 56.25rem) {
+  #login {
+    flex-direction: column;
+    gap: 7.1875rem;
+  }
+  .login-forms {
+    width: 25.5vw !important;
+  }
+  #loginForm {
+    margin-top: 6.375rem;
+  }
+  #signupForm {
+    margin-bottom: 8.125rem;
+  }
+}
+@media (max-width: 37.5rem) {
+  .login-forms {
+    width: 53.6vw !important;
+  }
 }

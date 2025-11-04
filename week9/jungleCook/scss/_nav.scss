@@ -67,7 +67,7 @@ header {
 	nav {
 		display: flex;
 		align-items: center;
-		width: 43%;
+		width: 46%;
 		height: 100%;
 	}
 	ul {
@@ -114,7 +114,7 @@ header {
 	.nav-actions {
 		height: 100%;
 	}
-	.login-btn {
+	#nav-login-btn {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -123,7 +123,7 @@ header {
 		border-radius: 1.625rem;
 		background-color: $color-brand-yellow;
 		box-shadow: $shadow-light;
-		transition: box-shadow ease-in-out 500ms;
+		transition: box-shadow ease 400ms;
 		/* make the anchor fill the button so hover targets the full area */
 		a {
 			display: block;
@@ -139,20 +139,37 @@ header {
 		&:hover::after {
 			display: none;
 		}
-		/* apply hover/active to the whole .login-btn element so it's easier to hit */
+
 		&:hover,
 		&.active {
+			/* apply hover/active to the whole .login-btn element so it's easier to hit */
 			box-shadow: $shadow-combined;
 		}
+		&.active:hover {
+			box-shadow: $shadow-dark;
+		}
+	}
+}
+@media (max-width: 80rem) {
+	header {
+		font-size: 1.5625rem;
 	}
 }
 @media (max-width: 70rem) {
 	header {
-		font-size: 1.5625rem;
 		.login-btn {
 			width: 9vw;
 		}
+		nav {
+			width: 50%;
+		}
 	}
 }
-@media (max-width: 54rem) {
+@media (max-width: 56.25rem) {
+	header {
+		#nav-login-btn {
+			width: auto;
+			padding: 0 1.5em;
+		}
+	}
 }

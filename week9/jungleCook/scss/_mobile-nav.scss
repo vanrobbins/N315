@@ -25,15 +25,14 @@
 	transition: opacity ease-in 400ms;
 	z-index: 25; /* sit behind the mobile menu (z-index:30) */
 }
-/* Open state transforms for three bars */
 
 .open {
 	.bg-overlay {
 		display: block;
 		opacity: 1;
 	}
-	/* Open state transforms for three bars */
 	.bar1 {
+		/* Open state transforms for three bars */
 		transform: rotate(45deg) translate(6px, 6px);
 	}
 	.bar2 {
@@ -66,7 +65,7 @@
 	z-index: 30;
 	transition: opacity ease 400ms;
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25rem) {
 	header nav {
 		display: none;
 	}

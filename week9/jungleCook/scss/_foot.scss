@@ -18,6 +18,9 @@ footer {
 		display: flex;
 		align-items: center;
 		letter-spacing: 10%;
+		span {
+			margin: 0;
+		}
 	}
 	#ft-links {
 		display: flex;
@@ -100,13 +103,13 @@ footer {
 			flex: 0 1 auto;
 		}
 
-		/* push socials to the right on the top row */
 		#ft-socials {
+			/* push socials to the right on the top row */
 			margin-left: auto;
 		}
 
-		/* place links on their own centered row below */
 		#ft-links {
+			/* place links on their own centered row below */
 			order: 2;
 			width: 100%;
 			text-align: center;

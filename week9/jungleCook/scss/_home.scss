@@ -34,7 +34,6 @@ body:has(#home) {
 	overflow: hidden;
 	h1 {
 		font-weight: 700;
-		font-style: Bold;
 		font-size: 1.875rem;
 		letter-spacing: 10%;
 		margin: 0;
@@ -48,6 +47,7 @@ body:has(#home) {
 		text-align: center;
 		color: $color-fg;
 		max-width: 46%;
+		margin: 0;
 	}
 }
 .small-circle {
