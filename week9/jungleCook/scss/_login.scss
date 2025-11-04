@@ -1,0 +1,34 @@
+@use "colors" as *;
+@use "shadows" as *;
+body:has(#login) {
+	max-height: 100vh;
+	background-color: $color-brand-yellow;
+	background-size: cover;
+	background-position: center;
+}
+#login {
+	display: flex;
+	justify-content: space-evenly;
+	color: $color-fg;
+	span {
+	}
+	label {
+	}
+	input {
+		color: $color-fg;
+		background: transparent;
+		border: none;
+		outline: none;
+		box-shadow: none;
+	}
+	button {
+	}
+}
+#loginForm {
+	display: flex;
+	flex-direction: column;
+}
+#signupForm {
+	display: flex;
+	flex-direction: column;
+}
