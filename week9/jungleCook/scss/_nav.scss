@@ -23,10 +23,12 @@ header {
 		justify-content: center;
 		user-select: none;
 		.logoText {
+			margin-bottom: 0;
 			position: relative; /* keep above absolute circles */
 			z-index: 3;
 		}
 		.oneCircLogo {
+			box-shadow: $shadow-light;
 			position: absolute;
 			aspect-ratio: 1;
 			border-radius: 50%;
@@ -36,6 +38,7 @@ header {
 			left: 0;
 		}
 		.twoCircLogo {
+			box-shadow: $shadow-light;
 			position: absolute;
 			aspect-ratio: 1;
 			border-radius: 50%;
@@ -45,6 +48,7 @@ header {
 			left: 15.6%;
 		}
 		.threeCircLogo {
+			box-shadow: $shadow-light;
 			position: absolute;
 			aspect-ratio: 1;
 			border-radius: 50%;
@@ -54,6 +58,7 @@ header {
 			left: 31.75%;
 		}
 		.fourCircLogo {
+			box-shadow: $shadow-light;
 			position: absolute;
 			aspect-ratio: 1;
 			border-radius: 50%;
