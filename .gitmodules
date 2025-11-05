@@ -1,0 +1,3 @@
+[submodule "Book-Nook"]
+	path = Book-Nook
+	url = https://github.com/vanrobbins/Book-Nook.git
