@@ -1,3 +1,6 @@
 [submodule "Book-Nook"]
 	path = Book-Nook
 	url = https://github.com/vanrobbins/Book-Nook.git
+[submodule "Jungle-Cook"]
+	path = Jungle-Cook
+	url = https://github.com/vanrobbins/jungle-cook.git
