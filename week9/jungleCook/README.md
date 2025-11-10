@@ -7,7 +7,7 @@ Add your own recipe
 today and fill the world
 with joy!
 
-## [Web 4 Link](https://in-info-web4.luddy.indianapolis.iu.edu/~vanrobbi/N315/jungleCook/)
+## [Web 4 Link](https://in-info-web4.luddy.indianapolis.iu.edu/~vanrobbi/N315/week9-jungleCook/)
 
 ### Installation
 
